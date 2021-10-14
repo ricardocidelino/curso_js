@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">    
+    <title>Seção 09 - Array</title>
+</head>
+<body>
+	<!--Configuração de Visualização-->
+	<h1>Array e Método de Arrays</h1>
+	
+    <p id="ApresVetor">Aqui será o valor do vetor</p>
+	<p id="ApresTam">Aqui será apresentado o tamanho do vetor</p>
+	
+	<p>
+	Botão 1 = Apresentar o Vetor <br>
+	Botão 2 = Inserir Novos Valores <br>
+	Botão 3 = Eliminar último elemento do vetor <br>
+	Botão 4 = Inserir um novo valor push() <br>
+	Botão 5 = Elimina o primeiro elemento shift() <br>
+	Botão 6 = inserir um novo elemento na primeira posição<br>
+	Botão 7 = Deleta o conteúdo de uma determinada posição<br>
+	Botão 8 = Inserir elemento a partir de uma posição splice<br>
+	</p>
+	
+	<button onclilck="mFunc1()">Botão 1</button>
+	<button onclilck="mFunc2()">Botão 2</button>
+	<button onclilck="mFunc3()">Botão 3</button>
+	<button onclilck="mFunc4()">Botão 4</button>
+	<button onclilck="mFunc5()">Botão 5</button>
+	<button onclilck="mFunc6()">Botão 6</button>
+	<button onclilck="mFunc7()">Botão 7</button>
+	<button onclilck="mFunc8()">Botão 8</button>
+	
+	<script>
+		var vMatriz = ["Valor 01", "Valor 02", "Valor 03"];
+		var x = "";
+		
+		function mFunc1(){			
+			document.getElementById("ApresVetor").innerHTML= vMatriz
+			document.getElementById("ApresTam").innerHTML= vMatriz.length
+		}
+		
+		function mFunc2(){			
+			vMatriz [0] = prompt("Digite o valor 1: ")
+			vMatriz [1] = prompt("Digite o valor 2: ")
+			vMatriz [2] = prompt("Digite o valor 3: ")
+		}		
+		
+		function mFunc3(){
+			vMatriz.pop();
+		}
+		
+		function mFunc4(){
+			x = prompt("Digite um valor: ");
+			vMatriz.push(x);
+		}
+		
+		function mFunc5(){
+			vMatriz.shift();
+		}
+		
+		function mFunc6(){
+			x = prompt("Digite um valor: ");
+			vMatriz.unshift(x);
+		}
+		
+		function mFunc7(){
+			x = prompt("Digite a posição de deleção: ");
+			delete vMatriz[x];
+		}
+		
+		function mFunc8(){
+			vAcao = prompt("Qual a ação do splice:");
+			vPosic = prompt("Qual a posição do vetor:");
+			
+			switch (){
+				case '0':
+					var vArray = [];
+					
+					vArray[0] = prompt("Digite valor do elemento 1:" + 1);
+					vArray[1] = prompt("Digite valor do elemento 2:" + 2);
+					vArray[3] = prompt("Digite valor do elemento 2:" + 3);
+					vArray[4] = prompt("Digite valor do elemento 2:" + 4);
+					
+					x = prompt("Digite a posição de seleção:");
+					vMatriz.splice(vPosic, vAcao,vArray[0],vArray[1],vArray[2],vArray[3]);
+				break;
+				
+				case '1':
+					vMatriz.splice(vPosic, vAcao);
+				break;
+				
+				case 2:
+				break;
+			}
+		}
+    </script>
+</body>
+</html>
